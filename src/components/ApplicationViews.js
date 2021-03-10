@@ -2,6 +2,7 @@
 
 import React from "react"
 import { Route } from "react-router"
+import { ApplicantForm } from "./applicants/ApplicantForm"
 import { ApplicantList } from "./applicants/ApplicantList"
 import { ApplicantProvider } from "./applicants/ApplicantProvider"
 
@@ -12,7 +13,11 @@ export const ApplicationViews = () => {
                 <Route exact path="/">
                     <ApplicantList />
                 </Route>
+                <Route path="/applicants/form" render={
+                    props => <ApplicantForm {...props} />
+                } />
             </ApplicantProvider>
+            
         </>
     )
 }

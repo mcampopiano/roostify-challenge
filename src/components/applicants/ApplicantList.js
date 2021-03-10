@@ -31,6 +31,7 @@ export const ApplicantList = () => {
                         <Applicant applicant={applicant} />
                     ))
                 }
+                <button>Add applicant</button>
             </section>
         </div>
     )
