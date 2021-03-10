@@ -1,3 +1,11 @@
 {
-    "applicants": []
+    "applicants": [
+        {
+            "id": 1,
+            "firstName": "Mario",
+            "lastName": "Flatfield",
+            "Occupation": "Software Engineer",
+            "SSN": 999999999
+        }
+    ]
 }
