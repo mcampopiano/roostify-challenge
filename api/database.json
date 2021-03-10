@@ -4,7 +4,7 @@
             "id": 1,
             "firstName": "Mario",
             "lastName": "Flatfield",
-            "Occupation": "Software Engineer",
+            "occupation": "Software Engineer",
             "SSN": 999999999
         }
     ]
