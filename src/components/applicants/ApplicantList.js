@@ -22,7 +22,10 @@ export const ApplicantList = () => {
         <div className="applicantList">
             <h1>List of current applicants</h1>
             <section className="applicantCard">
-                {/* Since the format for the return value is jsx, I need to wrap js functions in curly braces */}
+                {/* Since the format for the return value is jsx, I need to wrap js functions in 
+                curly braces. Map through each applicant in the array, 
+                and for each one call the Applicant component and pass the applicant as 
+                an argument to it. */}
                 {
                     applicants.map(applicant => (
                         <Applicant applicant={applicant} />

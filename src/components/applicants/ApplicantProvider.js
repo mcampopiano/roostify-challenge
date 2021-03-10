@@ -24,7 +24,7 @@
 // In order for subscribing components to have access to the functions, they must be included in the value
 // of the returned context provider.
 
-import React from "react"
+import React, { useState } from "react"
 
 export const ApplicantContext = React.createContext()
 
