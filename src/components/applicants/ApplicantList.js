@@ -1,12 +1,14 @@
 // This component will handle creating a list of the applicant objects which can be rendered to the DOM
 
 import React, { useContext, useEffect, useState } from "react"
+import { useHistory } from "react-router"
 import { Applicant } from "./Applicant"
 import { ApplicantContext } from "./ApplicantProvider"
 
 export const ApplicantList = () => {
     // Use object destructring to get the functions this component needs from the applicant context
     const {applicants, getApplicants} = useContext(ApplicantContext)
+    const history = useHistory()
     
 
     // Becuase React has an initial render phase, according to React documentation some functions need
@@ -31,7 +33,7 @@ export const ApplicantList = () => {
                         <Applicant applicant={applicant} />
                     ))
                 }
-                <button>Add applicant</button>
+                <button onClick={() => history.push("/applicants/form")}>Add applicant</button>
             </section>
         </div>
     )
