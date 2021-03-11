@@ -1,71 +1,61 @@
-# Getting Started with Create React App
+# Roostify coding challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## The challenge
+Problem Statement:-
+* Create an app, which shows up list of applicants, with data such as first name, last name, occupation, ssn information.
+* Initial data will be loaded asynchronously, from a mock json.
+* One should be able to add/ update/ remove applicant.
+* Add/ Update should take to a form based details screen, and navigate back to list dashboard on successful save/ update or cancel.
+* Remove should ask for a confirmation in a modal window, before actually removing the borrower.
 
-## Available Scripts
+## Installations
+In the terminal, run the commands:
+```
+git clone git@github.com:mcampopiano/roostify-challenge.git
+cd roostify-challenge
+npm install react-router-dom
+```
 
-In the project directory, you can run:
+### In order to run the json server, you will need to download Node.js
+For windows users, run the following commands in the terminal: 
+```
+curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
+ Then run `sudo npm i -g  json-server`
 
-### `npm start`
+ For MAC users, visit the Node.js site and install the LTS release,
+ then run `sudo npm i -g serve json-server`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Using the app
+### Running the application
+In the terminal, run the command: `npm start`
+(*NOTE* if this does not work, trying running `npm install` first)
 
-### `npm test`
+### Running the json server
+In a separate terminal window, navigate to the api directory, and run the following command:
+`json-server -p 8088 -w database.json`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### App walkthrough
+Once both react and the json database are running, the user should see a list of applicants.
 
-### `npm run build`
+#### Adding applicants
+To add an applicant, click the *add applicant* button on the homepage. The user will be redirected
+to a form. After filling in the relevant information and hitting the save button, the user will be rerouted
+to the homepage, and information for the newly created applicant will be visible.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Removing an applicant
+To remove an applicant, click the *remove applicant* button beneath the relevant applicant's information
+on the homepage. The user will be presented with a modal asking to confirm the decision. If confrimed,
+The user modal will disappear, the applicant object will be removed from the json database and will no longer render to the DOM.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Updating an applicant
+To update an applicant, click the *update applicant* button underneath the relevant applicant information.
+The user will be redirected to a form, which will be prefilled with the relevant applicants information.
+Any changes made to the form will be reflected in the json database once the user clicks the *confirm edit* button, and they will be redirected to the homepage.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# roostify-challenge
+### Notes on the challenge
+I am so grateful to have had the opportunity to work on this challenge. It was a fun project to work on, 
+and I think a great way for candidates to showcase their knowledge of CRUD functionality and basic ability to work with an api. I look forward to hearing feedback on my perfomance. Thank you! 
+-Mario Campopiano
