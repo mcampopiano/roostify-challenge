@@ -59,6 +59,11 @@ export const ApplicantForm = (props) => {
                     event.preventDefault()
                     buildApplicant()
                 }}>Save applicant</button>
+            <button type="submit"
+                onClick={event => {
+                    event.preventDefault()
+                    props.history.push("/")
+                }}>Cancel</button>
         </form>
     )
 }
