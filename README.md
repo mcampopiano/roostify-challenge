@@ -1,2 +1,6 @@
-# How to use the app
-In your terminal, run the command `git clone git@github.com:mcampopiano/roostify-challenge.git`
+# Installations
+In your terminal, run the commands:
+ `git clone git@github.com:mcampopiano/roostify-challenge.git`
+ `cd roostify-challenge`
+ `npm install react-router-dom`
+
