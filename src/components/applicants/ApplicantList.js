@@ -30,7 +30,7 @@ export const ApplicantList = () => {
                 an argument to it. */}
                 {
                     applicants.map(applicant => (
-                        <Applicant applicant={applicant} />
+                        <Applicant key={applicant.id} applicant={applicant} />
                     ))
                 }
                 <button onClick={() => history.push("/applicants/form")}>Add applicant</button>
