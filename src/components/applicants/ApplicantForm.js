@@ -5,13 +5,24 @@ import React, { useContext, useEffect, useState } from "react"
 import { ApplicantContext } from "./ApplicantProvider"
 
 export const ApplicantForm = (props) => {
-    const {addApplicant, applicants, updateApplicant, getApplicants} = useContext(ApplicantContext)
+    const { addApplicant, applicants, updateApplicant, getApplicants } = useContext(ApplicantContext)
 
     // Initialize applicant to be an object with the keys that should be on an applicant object
-    const [applicant, setApplicant] = useState({firstName: "", lastName: "", occupation: "", SSN: 0})
+    const [applicant, setApplicant] = useState({ firstName: "", lastName: "", occupation: "", SSN: 0 })
 
     // check the match.params to see if the user routed here by an edit button associated with an applicant
     const editMode = props.match.params.hasOwnProperty("applicantId")
+
+
+    // If edit mode is true, make the value of applicant the value stored in the location object
+    // from react-router-dom library. If there is not an applicant object, set it equal to the
+    // initialized values.
+    const getApplicantInEditMode = () => {
+        if (editMode) {
+            const selectedApplicant = props.location.state.chosenApplicant || { firstName: "", lastName: "", occupation: "", SSN: 0 }
+            setApplicant(selectedApplicant)
+        }
+    }
 
     const handleControlledInputChange = event => {
         // Make a copy of the applicant object, then dynamically modify the key and value to
@@ -25,14 +36,31 @@ export const ApplicantForm = (props) => {
         getApplicants()
     }, [])
 
+    // After getApplicants has run, this useEffect will run.
+    useEffect(() => {
+        getApplicantInEditMode()
+    }, [applicants])
+
     const buildApplicant = () => {
-        addApplicant({
-            firstName: applicant.firstName,
-            lastName: applicant.lastName,
-            occupation: applicant.occupation,
-            SSN: applicant.SSN
-        })
-        .then(props.history.push("/"))
+        if (editMode) {
+            updateApplicant({
+                id: applicant.id,
+                firstName: applicant.firstName,
+                lastName: applicant.lastName,
+                occupation: applicant.occupation,
+                SSN: applicant.SSN
+            })
+                .then(props.history.push("/"))
+        } else {
+
+            addApplicant({
+                firstName: applicant.firstName,
+                lastName: applicant.lastName,
+                occupation: applicant.occupation,
+                SSN: applicant.SSN
+            })
+                .then(props.history.push("/"))
+        }
     }
 
     return (

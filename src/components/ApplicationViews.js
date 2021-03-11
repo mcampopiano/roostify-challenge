@@ -13,7 +13,10 @@ export const ApplicationViews = () => {
                 <Route exact path="/">
                     <ApplicantList />
                 </Route>
-                <Route path="/applicants/form" render={
+                <Route exact path="/applicants/form" render={
+                    props => <ApplicantForm {...props} />
+                } />
+                <Route exact path="/applicants/form/:applicantId(\d+)" render={
                     props => <ApplicantForm {...props} />
                 } />
             </ApplicantProvider>
