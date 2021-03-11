@@ -10,14 +10,18 @@ Problem Statement:-
 
 ## Installations
 In the terminal, run the commands:
- * `git clone git@github.com:mcampopiano/roostify-challenge.git`
- * `cd roostify-challenge`
- * `npm install react-router-dom`
+```
+git clone git@github.com:mcampopiano/roostify-challenge.git
+cd roostify-challenge
+npm install react-router-dom
+```
 
 ### In order to run the json server, you will need to download Node.js
 For windows users, run the following commands in the terminal: 
-`curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -`
-`sudo apt-get install -y nodejs`
+```
+curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
  Then run `sudo npm i -g  json-server`
 
  For MAC users, visit the Node.js site and install the LTS release,
