@@ -4,7 +4,7 @@
       "id": 1,
       "firstName": "Mario",
       "lastName": "Flatfield",
-      "occupation": "Senior Software Engineer",
+      "occupation": "Software Engineer",
       "SSN": 999999999
     },
     {
@@ -13,13 +13,6 @@
       "occupation": "Data analyst",
       "SSN": "999999999",
       "id": 2
-    },
-    {
-      "firstName": "Irene",
-      "lastName": "Flatfield",
-      "occupation": "Boss Baby",
-      "SSN": "999999999",
-      "id": 3
     }
   ]
 }
