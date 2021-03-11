@@ -1,6 +1,7 @@
-// This component has the form both for creating and updating an applicant object.
-// I am making use of the match property that comes from react-router-dom
-
+/*
+This component has the form both for creating and updating an applicant object.
+I am making use of the match property that comes from react-router-dom
+*/
 import React, { useContext, useEffect, useState } from "react"
 import { ApplicantContext } from "./ApplicantProvider"
 
@@ -13,10 +14,11 @@ export const ApplicantForm = (props) => {
     // check the match.params to see if the user routed here by an edit button associated with an applicant
     const editMode = props.match.params.hasOwnProperty("applicantId")
 
-
-    // If edit mode is true, make the value of applicant the value stored in the location object
-    // from react-router-dom library. If there is not an applicant object, set it equal to the
-    // initialized values.
+    /*
+    If edit mode is true, make the value of applicant the value stored in the location object
+    from react-router-dom library. If there is not an applicant object, set it equal to the
+    initialized values.
+    */
     const getApplicantInEditMode = () => {
         if (editMode) {
             const selectedApplicant = props.location.state.chosenApplicant || { firstName: "", lastName: "", occupation: "", SSN: 0 }
@@ -25,8 +27,10 @@ export const ApplicantForm = (props) => {
     }
 
     const handleControlledInputChange = event => {
-        // Make a copy of the applicant object, then dynamically modify the key and value to
-        // customer input from the form below, then set the the value of the applicant object
+        /*
+        Make a copy of the applicant object, then dynamically modify the key and value to        
+        customer input from the form below, then set the the value of the applicant object
+        */
         const newApplicant = Object.assign({}, applicant)
         newApplicant[event.target.name] = event.target.value
         setApplicant(newApplicant)

@@ -8,7 +8,7 @@ export const Applicant = ({ applicant }) => {
     const history = useHistory()
 
     return (
-        <div className="applicant">
+        <div className="applicantCard">
             <p>Name: {applicant.firstName} {applicant.lastName}</p>
             <p>Occupation: {applicant.occupation} </p>
             <p>SSN: {applicant.SSN} </p>
