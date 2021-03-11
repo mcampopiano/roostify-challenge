@@ -86,7 +86,7 @@ export const ApplicantForm = (props) => {
                 onClick={event => {
                     event.preventDefault()
                     buildApplicant()
-                }}>Save applicant</button>
+                }}>{editMode ? "confirm edit" : "save applicant" }</button>
             <button type="submit"
                 onClick={event => {
                     event.preventDefault()
